@@ -1,0 +1,19 @@
+{
+  "name": "virtual-pet",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "virtual",
+    "pet"
+  ],
+  "author": "up2151393",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
