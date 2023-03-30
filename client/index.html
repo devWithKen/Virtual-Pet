@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script type="module" src="./scripts/main.mjs"></script>
     <title>Virtual Pet</title>
 </head>
 
 <body>
-
+    
     <svg height="500" width="500">
         <g id="ears">
             <circle id="right-ear" cx="170" cy="55" r="30" stroke="#000" stroke-width="10" fill="#8B4222" />
@@ -44,29 +44,31 @@
 
  
 
-    <section id="buttons">
+   <div class="wrapper">
+    <div id="buttons">
         <button id="playBtn" class="button didsable">Play</button>
         <button id="cleanBtn" class="button didsable"> Clean </button>
         <button id="feedBtn" class="button didsable"> Feed </button>
         <button id="sleepBtn" class="button"> Sleep  </button>
-    </section>
+    </div>
 
-    <section id="meters">
+    <div id="meters">
+        <p class="text">Energy: <meter low="33" high="66" optimum="80" id="energyMeter" min=0 max=100 value=0></meter>
         <p class="text">Happiness: <meter low="33" high="66" optimum="80" id="happyMeter" min=0 max=100 value=0></meter>
         <p class="text">Cleanliness: <meter low="33" high="66" optimum="80" id="cleanMeter" min=0 max=100 value=0></meter>
-        <p class="text">Hungriness: <meter low="33" high="66" optimum="80" id="feedMeter" min=0 max=100 value=0></meter>
-    </section>  
+        <p class="text">Hunger: <meter low="33" high="66" optimum="80" id="feedMeter" min=0 max=100 value=0></meter>
+    </div>  
 
-    <section id="infoDisplay">     
+    <div id="infoDisplay">     
         <p id="infoDisplayContent">
         <p id="clock"> 
-    </section>
+    </div>
         
     
-    <section id="comsec">       
+    <div id="comsec">       
         <input type="text" name="control" id="command" placeholder="type in a command here...">
         <button id="commandButton" class="button didsable">Enter</button>
-    </section>
+    </div>
     <div class="display">
         <p class="disp1 text"> Enter 'HOW TO' to see what I can do 
             
@@ -74,6 +76,7 @@
 <p id="display">
 
 </p>
+   </div>
 
 
 </body>

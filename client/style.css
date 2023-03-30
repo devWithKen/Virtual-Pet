@@ -1,122 +1,143 @@
-svg {
-    margin-left: 20em;
-}       
-
-svg #body {
-  transform-origin: center;
-}
-
-#buttons {
-  margin-left: 23em;
-  margin-top: 0em;
-  width: 500px;
-}
-
-#comsec .button, #buttons .button {
-  width: 100px;
-  height: 40px;
-  background-color: rgb(146, 94, 44);
-  border-color: #000;
-  border-radius: 3px;
-}
-
-#comsec .button:hover, #buttons .button:hover {
-  background-color:  #6B4200;
-}
-
-#meters .text {
-  font-weight: 700;
-  font-family: 'Times New Roman', Times, serif;
-}
-#comsec {
-  margin-top: 2em;
-  margin-left: 55em;
-}
-
-#comsec #command {
-  width: 240px;
-  height: 33px;
-  border: 3px solid rgb(131, 98, 67);
-  border-radius: 3px;
-}
-
-#comsec #command:focus {
-  border-color: #6B4200;
-  outline: none;
-}
-
-#meters {
-  margin-left: 55em;
-  margin-top: -12em;
-
-}
-
-#infoDisplay #clock {
-  margin-top: -45px;
-  margin-left: 56em;
- 
-}
-
-#infoDisplay #infoDisplayContent  {
- box-sizing: border-box;
- border: 5px solid rgb(146, 94, 44);
- border-radius: 3px;
- height: 240px;
- width: 320px;
- margin-left: 55em;
- margin-top: -27em;
- padding: 20px 20px 0 20px;
- /* margin-top: -27em; */
-}
-
-
-
-#mouth {
-    transform: translate(13.85em, 3.125em);
- }
-
-.awake {
-  animation: blinker 5s infinite;
-}
-
-@keyframes blinker {
-  0% { transform: scale(1, 1); }
-  5% { transform: scale(1, 0.1); } 
-  10% { transform: scale(1, 1); }
-  100% { transform: scale(1, 1); }
-}
-
-.sleep {
-  animation: sleep 1s infinite;
-}
-
-@keyframes sleep {
-  0% { transform: scale(1, 0.1); }
-  100% { transform: scale(1, 0.1); }
-}
-
-.display {
-  margin-left: 55em;
-  margin-top: -4.5em;
-  display: block;
-  white-space: nowrap;
-  min-width: 100%;
-  position: relative; 
-  overflow: hidden;
-}
-
-.display .disp1 {
-    display: inline-block;
-    -webkit-text-stroke: black;
+body {
+    width: auto;
+  }  
+  svg {
+      margin-left: 20em;
+  }       
+  
+  svg #body {
+    transform-origin: center;
+  }
+  
+  #buttons {
+    margin-left: 23em;
+    margin-top: 0em;
+    width: 500px;
+  }
+  
+  #comsec .button, #buttons .button {
+    width: 100px;
+    height: 40px;
+    background-color: rgb(146, 94, 44);
+    border-color: #000;
+    border-radius: 3px;
+  }
+  
+  #comsec .button:hover, #buttons .button:hover {
+    background-color:  #6B4200;
+  }
+  
+  #meters .text {
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  #comsec {
+    margin-top: 2em;
+    margin-left: 55em;
+  }
+  
+  #comsec #command {
+    width: 240px;
+    height: 33px;
+    border: 3px solid rgb(131, 98, 67);
+    border-radius: 3px;
+  }
+  
+  #comsec #command:focus {
+    border-color: #6B4200;
+    outline: none;
+  }
+  
+  #meters { 
+    margin-left: 55em;
+    margin-top: -12em;
+    
+  }
+  p {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 200px;
+  }
+  
+  #infoDisplay #clock {
+    margin-top: -45px;
+    margin-left: 56em; 
+  }
+  
+  #infoDisplay #infoDisplayContent  {
+   box-sizing: border-box;
+   border: 5px solid rgb(146, 94, 44);
+   border-radius: 3px;
+   height: 240px;
+   width: 320px;
+   margin-left: 55em;
+   margin-top: -30em;
+   padding: 20px 20px 0 20px;
+  }
+  
+  #mouth {
+      transform: translate(13.85em, 3.125em);
+   }
+  
+  .awake {
+    animation: blinker 5s infinite;
+  }
+  
+  @keyframes blinker {
+    0% { transform: scale(1, 1); }
+    5% { transform: scale(1, 0.1); } 
+    10% { transform: scale(1, 1); }
+    100% { transform: scale(1, 1); }
+  }
+  
+  .sleep {
+    animation: sleep 1s infinite;
+  }
+  
+  @keyframes sleep {
+    0% { transform: scale(1, 0.1); }
+    100% { transform: scale(1, 0.1); }
+  }
+  
+  .display {
+    margin-left: 55em;
+    margin-top: -4.5em;
+    display: block;
     white-space: nowrap;
-    animation: marquee 5s linear infinite;
-}
+    min-width: 100%;
+    position: relative; 
+    overflow: hidden;
+  }
+  
+  .display .disp1 {
+      display: inline-block;
+      -webkit-text-stroke: black;
+      white-space: nowrap;
+      animation: marquee 5s linear infinite;
+  }
+  
+  @keyframes marquee {
+    0% {
+        transform: translate(25%, 0);
+    }
+    100% {
+        transform: translate(-100%, 0)  ;   
+    }
+  }
+  
 
-@keyframes marquee {
-  0% {
-      transform: translate(25%, 0);
-  }
-  100% {
-      transform: translate(-100%, 0)  ;   
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
