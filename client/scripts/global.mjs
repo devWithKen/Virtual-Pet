@@ -1,4 +1,3 @@
-
 let timeLived = {
     seconds: 0,
     minutes: 0,
@@ -16,7 +15,6 @@ let feelings = {
     feed: 100,
     sleep: 100,
     play: 0
-
 };
 
 const abilities = [

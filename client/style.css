@@ -1,143 +1,380 @@
-body {
-    width: auto;
-  }  
-  svg {
-      margin-left: 20em;
-  }       
-  
-  svg #body {
-    transform-origin: center;
-  }
-  
-  #buttons {
-    margin-left: 23em;
-    margin-top: 0em;
-    width: 500px;
-  }
-  
-  #comsec .button, #buttons .button {
-    width: 100px;
-    height: 40px;
-    background-color: rgb(146, 94, 44);
-    border-color: #000;
-    border-radius: 3px;
-  }
-  
-  #comsec .button:hover, #buttons .button:hover {
-    background-color:  #6B4200;
-  }
-  
-  #meters .text {
-    font-weight: 700;
-    font-family: 'Times New Roman', Times, serif;
-  }
-  #comsec {
-    margin-top: 2em;
-    margin-left: 55em;
-  }
-  
-  #comsec #command {
-    width: 240px;
-    height: 33px;
-    border: 3px solid rgb(131, 98, 67);
-    border-radius: 3px;
-  }
-  
-  #comsec #command:focus {
-    border-color: #6B4200;
-    outline: none;
-  }
-  
-  #meters { 
-    margin-left: 55em;
-    margin-top: -12em;
-    
-  }
-  p {
-    display: flex;
-    justify-content: space-between;
-    margin-right: 200px;
-  }
-  
-  #infoDisplay #clock {
-    margin-top: -45px;
-    margin-left: 56em; 
-  }
-  
-  #infoDisplay #infoDisplayContent  {
+ html {
+  align-items: center;
+ }
+ 
+ body {
+   padding: 0;
+   margin: 0; 
+ }
+
+ .yellowPet :is(#legs, #body, #left-hand, #right-hand, #ears) {
+   fill: rgb(202, 202, 115);
+ }
+
+ #svgSection .wrapper #buttons .yellowBtn {
+   background-color: rgb(202, 202, 115);
+ }
+
+ .redPet :is(#legs, #body, #left-hand, #right-hand, #ears) {
+   fill: red;
+ }
+
+ .greenPet :is(#legs, #body, #left-hand, #right-hand, #ears) {
+   fill: green;
+ }
+
+ .purplePet :is(#legs, #body, #left-hand, #right-hand, #ears) {
+   fill: purple;
+ }
+
+ .pinkPet :is(#legs, #body, #left-hand, #right-hand, #ears) {
+   fill: pink;
+ }
+
+ .customPet :is(#legs, #body, #left-hand, #right-hand, #ears) {
+   fill: #8B4222;
+ }
+
+ #deathInfo-container #petDeath .button {
+   width: 16.25em;
+   height: 2.5em;
+   background-color: rgb(146, 94, 44);
+   border-color: #000;
+   border-radius: 1.875em;
+   font-size: 1em;
+   font-weight: 550;
+   margin-bottom: 0.75em;
+ }
+
+ #deathInfo-container #petDeath .button:hover {
+   background-color: #6B4200;
+ }
+
+ #deathInfo-container #petDeath {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-direction: column;
+   height: 14.375em;
+   width: 20em;
+   border-radius: 0.313em;
+   box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.6);
+ }
+
+ #deathInfo-container {
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   padding-top: 15em;
+   background-color: white;
+   top: 0em;
+   left: 25em;
+   align-items: center;
+   justify-content: center;
+ }
+
+
+ select {
+   width: 16.25em;
+   height: 2.5em;
+   text-align: center;
+   border-color: rgb(131, 98, 67);
+   border-radius: 1.875em;
+   font-size: 1em;
+   font-weight: 550;
+   border: 0.188em solid rgb(131, 98, 67);
+ }
+
+ h4 {
+   padding-top: 0.313em;
+   padding: 0;
+   margin: 0;
+ }
+
+ #login-container {
+   width: auto;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ #signinSection #signup-container #signupLayout .signup-input-holder {
+   border-color: #c92432;
+   background: #fffafa;
+ }
+
+ #signinSection #signup-container #signupLayout .signup-input-holder[data-error]::after {
+   content: attr(data-error);
+   font-size: 0.85em;
+   color: #c92432;
+   display: block;
+   margin: 0;
+ }
+
+ #loginSection #login-container #loginLayout .login-input-holder {
+   border-color: #c92432;
+   background: #fffafa;
+ }
+
+ #loginSection #login-container #loginLayout .login-input-holder[data-error]::after {
+   content: attr(data-error);
+   font-size: 0.85em;
+   color: #c92432;
+   display: block;
+   margin: 0;
+ }
+
+ .hide {
+   display: none;
+ }
+
+ #loginLayout .button {
+   width: 16.25em;
+   height: 2.5em;
+   background-color: rgb(146, 94, 44);
+   border-color: #000;
+   border-radius: 1.875em;
+   font-size: 1em;
+   font-weight: 550;
+ }
+
+ #loginLayout .signupInfo {
+   margin: 0;
+   height: 1.25em;
+ }
+
+ a {
+   text-decoration: none;
+   color: black;
+ }
+
+ a:hover {
+   text-decoration: underline;
+ }
+
+ #loginLayout #phoneNumber {
+   width: 15.313em;
+   height: 2.063em;
+   border: 0.188em solid rgb(131, 98, 67);
+   border-radius: 0.188em;
+   padding: 0.25em;
+ }
+
+ #login-container #loginLayout .login-input-holder {
+   height: 175;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   row-gap: 1.25em;
+   align-items: center;
+ }
+
+ #loginLayout {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-direction: column;
+   height: 14.375em;
+   width: 20em;
+   border-radius: 0.313em;
+   box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.6);
+ }
+
+ #signup-container {
+   width: auto;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+ #signupLayout {
+   margin: auto;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-direction: column;
+   height: 23.125em;
+   width: 20em;
+   border-radius: 0.313em;
+   box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.6);
+ }
+
+ #signupLayout .signupInfo {
+   margin: 0;
+   height: 1.25em;
+ }
+
+ #signup-container #signupLayout #createButton {
+   margin-top: 1.25em;
+ }
+
+ .signup-input-holder {
+   height: 175;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   row-gap: 1.25em;
+   align-items: center;
+ }
+
+ #signupLayout .button {
+   width: 16.25em;
+   height: 2.5em;
+   background-color: rgb(146, 94, 44);
+   border-color: #000;
+   border-radius: 1.875em;
+   font-size: 1em;
+   font-weight: 550;
+ }
+
+ #signupLayout #phoneNumber,
+ #signupLayout #petName {
+   width: 15.313em;
+   height: 2.063em;
+   border: 0.188em solid rgb(131, 98, 67);
+   border-radius: 0.188em;
+   padding: 0.25em;
+ }
+
+ svg {
+   margin-left: 20em;  
+ }
+
+ svg #body {
+   transform-origin: center;
+ }
+
+ #buttons {
+   margin-left: 23em;
+   margin-top: 0em;
+   width: 31.25em;
+ }
+
+ #comsec .button,
+ #buttons .button {
+   width: 6.25em;
+   height: 2.5em;
+   background-color: rgb(146, 94, 44);
+   border-color: #000;
+   border-radius: 0.188;
+   padding-left: 0.625em;
+ }
+
+ #comsec .button:hover,
+ #buttons .button:hover,
+ #signupLayout .button:hover,
+ #loginLayout .button:hover {
+   background-color: #6B4200;
+ }
+
+ #meters .text {
+   font-weight: 700;
+   font-family: 'Times New Roman', Times, serif;
+ }
+
+ #comsec {
+   margin-top: 2em; 
+   margin-left: 55em; 
+ }
+
+ #comsec .input {
+   width: 12.813em;
+   height: 2.063em;
+   border: 0.188em solid rgb(131, 98, 67);
+   border-radius: 0.188em;
+ }
+
+ #comsec .input:focus,
+ #signupLayout .input:focus {
+   border-color: #6B4200;
+   outline: none;
+ }
+
+ #meters {
+   margin-left: 55em; 
+   margin-top: -12em;
+
+ }
+
+ p {
+   display: flex;
+   justify-content: space-between;
+   margin-right: 12.5em;
+ }
+
+ #infoDisplay #clock {
+   margin-top: -2.813em; 
+   margin-left: 56em;
+ }
+
+ #infoDisplay #infoDisplayContent {
    box-sizing: border-box;
    border: 5px solid rgb(146, 94, 44);
-   border-radius: 3px;
-   height: 240px;
-   width: 320px;
-   margin-left: 55em;
+   border-radius: 0.188em;
+   height: 15em;
+   width: 20em;
+   margin-left: 55em; 
    margin-top: -30em;
-   padding: 20px 20px 0 20px;
-  }
-  
-  #mouth {
-      transform: translate(13.85em, 3.125em);
+   padding: 1.25em 1.25em 0 1.25em;
+   display: grid;
+ }
+
+ #mouth {
+   transform: translate(13.85em, 3.125em);
+ }
+
+ .awake {
+   animation: blinker 5s infinite;
+ }
+
+ @keyframes blinker {
+   0% {
+     transform: scale(1, 1);
    }
-  
-  .awake {
-    animation: blinker 5s infinite;
-  }
-  
-  @keyframes blinker {
-    0% { transform: scale(1, 1); }
-    5% { transform: scale(1, 0.1); } 
-    10% { transform: scale(1, 1); }
-    100% { transform: scale(1, 1); }
-  }
-  
-  .sleep {
-    animation: sleep 1s infinite;
-  }
-  
-  @keyframes sleep {
-    0% { transform: scale(1, 0.1); }
-    100% { transform: scale(1, 0.1); }
-  }
-  
-  .display {
-    margin-left: 55em;
-    margin-top: -4.5em;
-    display: block;
-    white-space: nowrap;
-    min-width: 100%;
-    position: relative; 
-    overflow: hidden;
-  }
-  
-  .display .disp1 {
-      display: inline-block;
-      -webkit-text-stroke: black;
-      white-space: nowrap;
-      animation: marquee 5s linear infinite;
-  }
-  
-  @keyframes marquee {
-    0% {
-        transform: translate(25%, 0);
-    }
-    100% {
-        transform: translate(-100%, 0)  ;   
-    }
-  }
-  
+
+   5% {
+     transform: scale(1, 0.1);
+   }
+
+   10% {
+     transform: scale(1, 1);
+   }
+
+   100% {
+     transform: scale(1, 1);
+   }
+ }
+
+ .sleep {
+   animation: sleep 1s infinite;
+ }
+
+ @keyframes sleep {
+   0% {
+     transform: scale(1, 0.1);
+   }
+
+   100% {
+     transform: scale(1, 0.1);
+   }
+ }
+
+ .display {
+   margin-left: 55em; 
+   margin-top: -4.5em;
+   display: block;
+   white-space: nowrap;
+   min-width: 100%;
+   position: relative;
+   overflow: hidden;
+ }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+ @media (max-width: 600px) {
+   a {
+     text-decoration: underline;
+   }
+ }
