@@ -6,76 +6,134 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script type="module" src="./scripts/main.mjs"></script>
+    <script type="module" src="./scripts/signin.mjs"></script>
+    <script type="module" src="./scripts/pagemanager.mjs"></script>
     <title>Virtual Pet</title>
 </head>
 
 <body>
+    <section id="signinSection">
+        <div id="signup-container">
+            <div id="signupLayout">
+                <h4 id="h4">
+                    Create a new Pet
+                </h4>
+                <form class="signup-input-holder">
+                    <label for="error" class="error"></label>
+                    <input type="tel" name="phoneNumber" id="phoneNumber" class="input" placeholder="Phone number"
+                        maxlength="11" required>
+                    <input type="text" name="petName" id="petName" class="input" placeholder="Pet name" required>
+                    <select name="petColor" id="colors" required>
+                        <option value="#">Select a color</option>
+                        <option value="red">Red</option>
+                        <option value="custom">Custom</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="green">Green</option>
+                        <option value="pink">Pink</option>
+                        <option value="purple">Purple</option>
+                    </select>
+                    <button type="submit" id="createButton" class="button">Create</button>
+                </form>
+                <p class="signupInfo">Already have a pet? <a class="signupLink" href="#loginSection">get your pet</a>
+                </p>
+            </div>
+        </div>
+    </section>
 
-    <svg height="500" width="500">
-        <g id="ears">
-            <circle id="right-ear" cx="170" cy="55" r="30" stroke="#000" stroke-width="10" fill="#8B4222" />
-            <circle id="left-ear" cx="330" cy="55" r="30" stroke="#000" stroke-width="10" fill="#8B4222" />
-        </g>
-        <circle id=body cx="250" cy="300" r="130" stroke="#000" stroke-width="10" fill="#8B4222" />
-        <circle id=head cx="250" cy="130" r="100" stroke="#000" stroke-width="10" fill="#DDA47C" />      
-        <defs>
-             <g id="eyes" class="awake">
-                <circle cx="-36" r="10"/>
-                <circle cy=-2 cx="-36" r="2" fill="#FFF" opacity="0.5" />
-                <circle  cx="40" r="10" />
-                <circle cy=-2 cx="44" r="2" fill="#FFF" opacity="0.5" />
+    <section id="loginSection">
+        <div id="login-container">
+            <div id="loginLayout">
+                <form class="login-input-holder">
+                    <h4>
+                        Get your Pet
+                    </h4>
+                    <input type="tel" name="number" id="phoneNumber" class="input" placeholder="Phone number"
+                        maxlength="11" required>
+                    <button type="submit" id="getPetButton" class="button">Get Pet</button>
+
+                </form>
+
+                <p class="signupInfo"> Not a Pet owner? <a class="loginLink" href="#signinSection">create a pet</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="svgSection">
+        <svg height="500" width="500" class="svg">
+            <g id="ears">
+                <circle id="right-ear" cx="170" cy="55" r="30" stroke="#000" stroke-width="10" />
+                <circle id="left-ear" cx="330" cy="55" r="30" stroke="#000" stroke-width="10" />
             </g>
-            <g id="hands">
-                <path id="left-hand" d="M0,-20 C-100,-30 , -160,30 0,30" fill="#8B4222" stroke-width="10" stroke="#000"> </path>
-                <path id="right-hand" d="M0, 20 C 100 30, 160,-30 0,-30" fill="#8B4222" stroke-width="10" stroke="#000"></path>
+            <circle id=body cx="250" cy="300" r="130" stroke="#000" stroke-width="10" fill="#8B4222" />
+            <circle id=head cx="250" cy="130" r="100" stroke="#000" stroke-width="10" fill="#DDA47C" />
+            <defs>
+                <g id="eyes" class="awake">
+                    <circle cx="-36" r="10" />
+                    <circle cy=-2 cx="-36" r="2" fill="#FFF" opacity="0.5" />
+                    <circle cx="40" r="10" />
+                    <circle cy=-2 cx="44" r="2" fill="#FFF" opacity="0.5" />
+                </g>
+                <g id="hands">
+                    <path id="left-hand" d="M0,-20 C-100,-30 , -160,30 0,30" fill="#8B4222" stroke-width="10"
+                        stroke="#000">
+                    </path>
+                    <path id="right-hand" d="M0, 20 C 100 30, 160,-30 0,-30" fill="#8B4222" stroke-width="10"
+                        stroke="#000">
+                    </path>
+                </g>
+            </defs>
+            <use href="#eyes" x="250" y="90"></use>
+            <ellipse id="nose" cx="250" cy="125" rx="25" ry="15" stroke="#000" stroke-width="5" />
+            <path id="mouth" d="M 10 110 C 20 140, 40 140, 50 110" stroke="black" fill="transparent" stroke-width="5" />
+            <g id="legs">
+                <circle id="left-leg" cx="150" cy="400" r="40" stroke-width="10" stroke="#000" />
+                <circle id="right-leg" cx="360" cy="400" r="40" stroke-width="10" stroke="#000" />
             </g>
-        </defs>
-        <use href="#eyes" x="250" y="90"></use>
-
-        <ellipse id="nose" cx="250" cy="125" rx="25" ry="15" fill="#000" stroke="#000" stroke-width="5" />
-        <path id="mouth" d="M 10 110 C 20 140, 40 140, 50 110" stroke="black" fill="transparent" stroke-width="5" />
-        <g id="legs">
-            <circle id="left-leg" cx="150" cy="400" r="40" stroke-width="10" stroke="#000" fill="#8B4222" />
-            <circle id="right-leg" cx="360" cy="400" r="40" stroke-width="10" stroke="#000" fill="#8B4222" />
-        </g>
-        <use href="#hands"></use>
-    </svg>
-
- 
-
-    <section id="buttons">
-        <button id="playBtn" class="button didsable">Play</button>
-        <button id="cleanBtn" class="button didsable"> Clean </button>
-        <button id="feedBtn" class="button didsable"> Feed </button>
-        <button id="sleepBtn" class="button"> Sleep  </button>
+            <use href="#hands"></use>
+        </svg>
+        <div class="wrapper">
+            <div id="buttons">
+                <button id="playBtn" class="button disable">Play</button>
+                <button id="cleanBtn" class="button disable"> Clean </button>
+                <button id="feedBtn" class="button disable"> Feed </button>
+                <button id="sleepBtn" class="button"> Sleep</button>
+            </div>
+            <div id="meters">
+                <p class="text">Energy: <meter low="33" high="66" optimum="80" id="energyMeter" min=0 max=100
+                        value=0></meter>
+                <p class="text">Happiness: <meter low="33" high="66" optimum="80" id="happyMeter" min=0 max=100
+                        value=0></meter>
+                <p class="text">Cleanliness: <meter low="33" high="66" optimum="80" id="cleanMeter" min=0 max=100
+                        value=0></meter>
+                <p class="text">Hunger: <meter low="33" high="66" optimum="80" id="feedMeter" min=0 max=100
+                        value=0></meter>
+            </div>
+            <div id="infoDisplay">
+                <p id="infoDisplayContent">
+                <p id="clock">
+            </div>
+            <div id="comsec">
+                <input type="text" name="control" class="input" id="command" placeholder="type in a command here...">
+                <button id="commandButton" class="button didsable">Enter</button>
+            </div>
+            <div class="display">
+                <p class="disp1 text">
+            </div>
+            <p id="display">
+            </p>
+        </div>
     </section>
 
-    <section id="meters">
-        <p class="text">Happiness: <meter low="33" high="66" optimum="80" id="happyMeter" min=0 max=100 value=0></meter>
-        <p class="text">Cleanliness: <meter low="33" high="66" optimum="80" id="cleanMeter" min=0 max=100 value=0></meter>
-        <p class="text">Hungriness: <meter low="33" high="66" optimum="80" id="feedMeter" min=0 max=100 value=0></meter>
-    </section>  
+    <div id="deathInfo-container" class="hide">
+        <div id="petDeath">
+            <h4 id="deathMessage"></h4>
+            <h4 id="deathReason"></h4>
+            <h4 id="timeLived"></h4>     
 
-    <section id="infoDisplay">     
-        <p id="infoDisplayContent">
-        <p id="clock"> 
-    </section>
-        
-    
-    <section id="comsec">       
-        <input type="text" name="control" id="command" placeholder="type in a command here...">
-        <button id="commandButton" class="button didsable">Enter</button>
-    </section>
-    <div class="display">
-        <p class="disp1 text"> Enter 'HOW TO' to see what I can do 
-            
+                <button class="button" id="restartBtn">start again</button>       
+
+        </div>      
     </div>
-<p id="display">
-
-</p>
-
-
 </body>
-
 </html>
